@@ -12,7 +12,7 @@ The Daily Loaf is a fully responsive, multi-page website for an artisan bakery b
 
 ## 🌐 Live Website
 
-🔗 **Live URL:**[ [https://your-site-name.netlify.app](https://your-site-name.netlify.app)](https://6a33e3680b968281293f492f--lighthearted-florentine-2ac9a6.netlify.app/)
+🔗 **Live URL:**[ (https://6a33e3680b968281293f492f--lighthearted-florentine-2ac9a6.netlify.app/)
 
 *(Update this with your actual Netlify URL after deployment)*
 
