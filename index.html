@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>The Daily Loaf - Artisan Bakery Christchurch | Fresh Sourdough & Coffee</title>
+    <meta name="description" content="Fresh artisan sourdough, croissants, and coffee baked daily in Christchurch. Family-owned bakery since 2012. Order online for next-day pickup.">
+    <meta name="keywords" content="artisan bakery Christchurch, fresh sourdough, croissants, coffee, bakery delivery, local bakery NZ">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>The Daily Loaf</h1>
+            <p>Artisan Bakery & Cafe</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" aria-label="Toggle navigation">☰</button>
+    </header>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to<br><span>The Daily Loaf</span></h1>
+            <p>Fresh sourdough, pastries, and coffee — baked daily in Christchurch.</p>
+            <a href="products.html" class="btn">View Our Menu</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT PREVIEW
+         ============================================ -->
+    <section class="about-preview">
+        <div class="about-text">
+            <span class="tag">Since 2012</span>
+            <h2>Baking with Tradition</h2>
+            <p>We're a family-owned bakery in Christchurch, using traditional methods and the finest local ingredients. Every loaf tells a story.</p>
+            <a href="about.html" class="btn-secondary">About Us →</a>
+        </div>
+        <div class="about-image">
+            <img src="img/sourdough.jpg" alt="Fresh sourdough bread">
+        </div>
+    </section>
+
+    <!-- ============================================
+         GALLERY - 12 Images with Filter
+         ============================================ -->
+    <section class="gallery">
+        <div class="gallery-header">
+            <span class="tag">Our Bakes</span>
+            <h2>Fresh From the Oven</h2>
+            <p class="gallery-subtitle">Handcrafted with love every morning</p>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="bread">🍞 Bread</button>
+            <button class="filter-btn" data-filter="pastry">🥐 Pastries</button>
+            <button class="filter-btn" data-filter="coffee">☕ Coffee</button>
+            <button class="filter-btn" data-filter="savory">🥧 Savory</button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="gallery-search">
+            <input type="text" id="gallerySearch" placeholder="🔍 Search bakes..." onkeyup="searchGallery()">
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Breads -->
+            <div class="gallery-item" data-category="bread" data-name="sourdough artisan bread">
+                <img src="img/sourdough.jpg" alt="Artisan sourdough bread with crispy crust" onclick="openLightbox(this)">
+                <p>🌾 Artisan Sourdough</p>
+            </div>
+            <div class="gallery-item" data-category="bread" data-name="ciabatta italian bread">
+                <img src="img/ciabatta.jpg" alt="Rustic Italian ciabatta bread" onclick="openLightbox(this)">
+                <p>🇮🇹 Ciabatta</p>
+            </div>
+            <div class="gallery-item" data-category="bread" data-name="baguette french bread">
+                <img src="img/baguette.jpg" alt="Classic French baguette" onclick="openLightbox(this)">
+                <p>🇫🇷 Baguette</p>
+            </div>
+            <div class="gallery-item" data-category="bread" data-name="focaccia rosemary herb bread">
+                <img src="img/focaccia-herbs.jpg" alt="Rosemary focaccia with olive oil" onclick="openLightbox(this)">
+                <p>🌿 Rosemary Focaccia</p>
+            </div>
+
+            <!-- Pastries -->
+            <div class="gallery-item" data-category="pastry" data-name="croissant butter pastry">
+                <img src="img/croissant.jpg" alt="Flaky butter croissant" onclick="openLightbox(this)">
+                <p>🥐 Butter Croissant</p>
+            </div>
+            <div class="gallery-item" data-category="pastry" data-name="almond croissant pastry">
+                <img src="img/almond-croissant.jpg" alt="Almond croissant with sliced almonds" onclick="openLightbox(this)">
+                <p>🥜 Almond Croissant</p>
+            </div>
+            <div class="gallery-item" data-category="pastry" data-name="pain au chocolat chocolate pastry">
+                <img src="img/pain-au-chocolat.jpg" alt="Pain au chocolat with dark chocolate" onclick="openLightbox(this)">
+                <p>🍫 Pain au Chocolat</p>
+            </div>
+            <div class="gallery-item" data-category="pastry" data-name="cinnamon roll sweet pastry">
+                <img src="img/cinnamon-roll.jpg" alt="Cinnamon roll with cream cheese frosting" onclick="openLightbox(this)">
+                <p>🍥 Cinnamon Roll</p>
+            </div>
+
+            <!-- Coffee -->
+            <div class="gallery-item" data-category="coffee" data-name="fresh brewed coffee">
+                <img src="img/coffee.jpg" alt="Fresh brewed artisan coffee" onclick="openLightbox(this)">
+                <p>☕ Fresh Coffee</p>
+            </div>
+            <div class="gallery-item" data-category="coffee" data-name="flat white coffee">
+                <img src="img/flat-white.jpg" alt="Smooth flat white coffee" onclick="openLightbox(this)">
+                <p>☕ Flat White</p>
+            </div>
+
+            <!-- Savory -->
+            <div class="gallery-item" data-category="savory" data-name="savory meat pie">
+                <img src="img/savory-pie.jpg" alt="Savory meat pie with golden pastry" onclick="openLightbox(this)">
+                <p>🥧 Savory Pie</p>
+            </div>
+            <div class="gallery-item" data-category="savory" data-name="quiche lorraine savory">
+                <img src="img/quiche.jpg" alt="Quiche Lorraine with bacon and cheese" onclick="openLightbox(this)">
+                <p>🧀 Quiche Lorraine</p>
+            </div>
+        </div>
+
+        <!-- No results message -->
+        <div id="noResults" class="no-results" style="display:none;">
+            <p>🔍 No bakes found. Try a different search!</p>
+        </div>
+
+        <div class="gallery-stats">
+            <span id="itemCount">🍞 12 delicious bakes</span>
+            <span>👆 Click any image to enlarge</span>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LIGHTBOX
+         ============================================ -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-btn" onclick="event.stopPropagation(); closeLightbox()">×</span>
+        <div class="lightbox-nav">
+            <button class="lightbox-prev" onclick="event.stopPropagation(); navigateLightbox(-1)">‹</button>
+            <img id="lightbox-img" src="">
+            <button class="lightbox-next" onclick="event.stopPropagation(); navigateLightbox(1)">›</button>
+        </div>
+        <div id="lightbox-caption"></div>
+        <div id="lightbox-counter"></div>
+    </div>
+
+    <!-- ============================================
+         FAQ / ACCORDION SECTION (Part 3 Requirement)
+         ============================================ -->
+    <section class="faq-section">
+        <div class="faq-header">
+            <span class="tag">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about our bakery</p>
+        </div>
+
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>What are your opening hours?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>We're open Monday to Friday from 7:00am to 5:00pm, and Saturday from 8:00am to 4:00pm. We're closed on Sundays.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Do you offer gluten-free options?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Yes! We offer a selection of gluten-free breads and pastries. Please check our <a href="products.html">Products page</a> for current availability or contact us for special orders.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>How do I place a pre-order?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>You can place a pre-order by visiting our <a href="enquiry.html">Enquiry page</a> or giving us a call at (03) 555 1234. Orders placed by 9pm are ready for next-day pickup.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Do you do catering for events?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Absolutely! We offer pastry boxes, sandwich platters, and custom orders for office meetings, parties, and events. Contact us at least 48 hours in advance.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Where are you located?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>We're located at 123 Baker Street, Christchurch. Visit our <a href="contact.html">Contact page</a> for a map and directions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIALS (DOM Manipulation)
+         ============================================ -->
+    <section class="testimonials">
+        <div class="testimonials-header">
+            <span class="tag">What Our Customers Say</span>
+            <h2>Love From Our Community</h2>
+        </div>
+
+        <div class="testimonial-slider" id="testimonialSlider">
+            <div class="testimonial-track" id="testimonialTrack">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"The best sourdough in Christchurch! Our weekly family treat."</p>
+                    <cite>— Sarah & Mike, Local Customers</cite>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Their croissants transport me straight to Paris. Absolutely divine."</p>
+                    <cite>— Emma, Food Blogger</cite>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"We've used The Daily Loaf for office catering twice now. Always a hit!"</p>
+                    <cite>— James, Office Manager</cite>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Finally found a bakery that uses real local ingredients. You can taste the difference."</p>
+                    <cite>— Lisa, Christchurch Local</cite>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-controls">
+            <button class="testimonial-btn" onclick="prevTestimonial()">‹</button>
+            <div class="testimonial-dots" id="testimonialDots"></div>
+            <button class="testimonial-btn" onclick="nextTestimonial()">›</button>
+        </div>
+    </section>
+
+    <!-- ============================================
+         MAP PREVIEW (Part 3 Requirement)
+         ============================================ -->
+    <section class="map-section">
+        <div class="map-content">
+            <span class="tag">Visit Us</span>
+            <h2>Find Our Bakery</h2>
+            <p>123 Baker Street, Christchurch</p>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2928.205829632513!2d172.6362!3d-43.5321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d318b6e8a0f6d6d%3A0x8a4d5c3e2b9a8f6d!2sChristchurch%20Central%20City!5e0!3m2!1sen!2snz!4v1700000000000" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <a href="contact.html" class="btn-secondary">Get Directions →</a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         NEWSLETTER SIGNUP (Form Element)
+         ============================================ -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <span class="tag">Stay Fresh</span>
+            <h2>Join Our Newsletter</h2>
+            <p>Get updates on new bakes, seasonal specials, and exclusive offers.</p>
+            <form class="newsletter-form" onsubmit="return handleNewsletter(event)">
+                <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+            <div id="newsletterMessage" class="newsletter-message" style="display:none;"></div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FEATURES
+         ============================================ -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="icon">📦</div>
+            <h3>Pre-Orders</h3>
+            <p>Order by 9pm for next-day pickup</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🌾</div>
+            <h3>Local Ingredients</h3>
+            <p>Canterbury flour & free-range eggs</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🎉</div>
+            <h3>Catering</h3>
+            <p>Pastry boxes & sandwich platters</p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BACK TO TOP BUTTON
+         ============================================ -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>The Daily Loaf</h3>
+                <p>123 Baker Street, Christchurch</p>
+                <p>(03) 555 1234</p>
+                <p>hello@thedailyloaf.co.nz</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="products.html">Products</a>
+                <a href="enquiry.html">Enquiry</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-hours">
+                <h4>Hours</h4>
+                <p>Mon–Fri: 7am – 5pm</p>
+                <p>Sat: 8am – 4pm</p>
+                <p>Sun: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Daily Loaf. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Our Products - The Daily Loaf | Artisan Bread & Pastries Christchurch</title>
+    <meta name="description" content="Browse our full range of artisan sourdough, pastries, and coffee. Freshly baked daily in Christchurch. Order online for next-day pickup.">
+    <meta name="keywords" content="artisan bread Christchurch, sourdough, pastries, croissants, coffee, bakery products, fresh baked goods">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>The Daily Loaf</h1>
+            <p>Artisan Bakery & Cafe</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" aria-label="Toggle navigation">☰</button>
+    </header>
+
+    <!-- ============================================
+         PAGE HEADER
+         ============================================ -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <span class="tag">Our Bakes</span>
+            <h2>What We Bake</h2>
+            <p>Freshly baked every day with love and local ingredients</p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEARCH & FILTER (Part 3 Requirement)
+         ============================================ -->
+    <section class="product-tools">
+        <div class="search-filter-container">
+            <div class="search-box">
+                <input type="text" id="productSearch" placeholder="🔍 Search products..." onkeyup="filterProducts()">
+            </div>
+            <div class="filter-box">
+                <select id="categoryFilter" onchange="filterProducts()">
+                    <option value="all">All Categories</option>
+                    <option value="bread">🍞 Bread</option>
+                    <option value="pastry">🥐 Pastries</option>
+                    <option value="coffee">☕ Coffee</option>
+                    <option value="savory">🥧 Savory</option>
+                    <option value="catering">📦 Catering</option>
+                </select>
+            </div>
+            <div class="sort-box">
+                <select id="sortFilter" onchange="filterProducts()">
+                    <option value="default">Sort by</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+            </div>
+        </div>
+        <div id="productCount" class="product-count">Showing 12 products</div>
+    </section>
+
+    <!-- ============================================
+         PRODUCTS GRID
+         ============================================ -->
+    <section class="products-grid" id="productsGrid">
+        <!-- Breads -->
+        <div class="product-card" data-category="bread" data-name="Classic Sourdough" data-price="85">
+            <div class="product-image-wrapper">
+                <img src="img/sourdough.jpg" alt="Classic sourdough bread with crispy crust" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">🍞 Bread</span>
+                <h3>Classic Sourdough</h3>
+                <p>Slow-fermented for 24 hours. Crispy crust, soft crumb.</p>
+                <div class="product-footer">
+                    <span class="price">R 85.00</span>
+                    <button class="btn-add" onclick="addToCart('Classic Sourdough', 85)">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="bread" data-name="Rye Bread" data-price="90">
+            <div class="product-image-wrapper">
+                <img src="img/sourdough.jpg" alt="Hearty rye bread" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">🍞 Bread</span>
+                <h3>Rye Bread</h3>
+                <p>Hearty, dense, and perfect with butter or cheese.</p>
+                <div class="product-footer">
+                    <span class="price">R 90.00</span>
+                    <button class="btn-add" onclick="addToCart('Rye Bread', 90)">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="bread" data-name="Ciabatta" data-price="75">
+            <div class="product-image-wrapper">
+                <img src="img/ciabatta.jpg" alt="Rustic Italian ciabatta bread" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">🍞 Bread</span>
+                <h3>Ciabatta</h3>
+                <p>Italian-style bread with a crispy crust and airy crumb.</p>
+                <div class="product-footer">
+                    <span class="price">R 75.00</span>
+                    <button class="btn-add" onclick="addToCart('Ciabatta', 75)">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="bread" data-name="Baguette" data-price="65">
+            <div class="product-image-wrapper">
+                <img src="img/baguette.jpg" alt="Classic French baguette" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">🍞 Bread</span>
+                <h3>Baguette</h3>
+                <p>Classic French baguette with a golden, crispy crust.</p>
+                <div class="product-footer">
+                    <span class="price">R 65.00</span>
+                    <button class="btn-add" onclick="addToCart('Baguette', 65)">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="bread" data-name="Rosemary Focaccia" data-price="85">
+            <div class="product-image-wrapper">
+                <img src="img/focaccia-herbs.jpg" alt="Rosemary focaccia with olive oil" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">🍞 Bread</span>
+                <h3>Rosemary Focaccia</h3>
+                <p>Italian flatbread topped with rosemary, olive oil, and sea salt.</p>
+                <div class="product-footer">
+                    <span class="price">R 85.00</span>
+                    <button class="btn-add" onclick="addToCart('Rosemary Focaccia', 85)">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastries -->
+        <div class="product-card" data-category="pastry" data-name="Butter Croissant" data-price="45">
+            <div class="product-image-wrapper">
+                <img src="img/croissant.jpg" alt="Flaky butter croissant" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">🥐 Pastry</span>
+                <h3>Butter Croissant</h3>
+                <p>Flaky, buttery, and baked fresh each morning.</p>
+                <div class="product-footer">
+                    <span class="price">R 45.00</span>
+                    <button class="btn-add" onclick="addToCart('Butter Croissant', 45)">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="pastry" data-name="Almond Croissant" data-price="55">
+            <div class="product-image-wrapper">
+                <img src="img/almond-croissant.jpg" alt="Almond croissant with sliced almonds" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">🥐 Pastry</span>
+                <h3>Almond Croissant</h3>
+                <p>Buttery croissant filled with almond cream, topped with sliced almonds.</p>
+                <div class="product-footer">
+                    <span class="price">R 55.00</span>
+                    <button class="btn-add" onclick="addToCart('Almond Croissant', 55)">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="pastry" data-name="Pain au Chocolat" data-price="50">
+            <div class="product-image-wrapper">
+                <img src="img/pain-au-chocolat.jpg" alt="Pain au chocolat with dark chocolate" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">🥐 Pastry</span>
+                <h3>Pain au Chocolat</h3>
+                <p>Flaky pastry with rich dark chocolate baked inside.</p>
+                <div class="product-footer">
+                    <span class="price">R 50.00</span>
+                    <button class="btn-add" onclick="addToCart('Pain au Chocolat', 50)">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="pastry" data-name="Cinnamon Roll" data-price="50">
+            <div class="product-image-wrapper">
+                <img src="img/cinnamon-roll.jpg" alt="Cinnamon roll with cream cheese frosting" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">🥐 Pastry</span>
+                <h3>Cinnamon Roll</h3>
+                <p>Warm spice, cream cheese glaze. A customer favourite.</p>
+                <div class="product-footer">
+                    <span class="price">R 50.00</span>
+                    <button class="btn-add" onclick="addToCart('Cinnamon Roll', 50)">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee -->
+        <div class="product-card" data-category="coffee" data-name="Fresh Brewed Coffee" data-price="40">
+            <div class="product-image-wrapper">
+                <img src="img/coffee.jpg" alt="Fresh brewed artisan coffee" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">☕ Coffee</span>
+                <h3>Fresh Brewed Coffee</h3>
+                <p>Single-origin beans, freshly roasted and brewed.</p>
+                <div class="product-footer">
+                    <span class="price">R 40.00</span>
+                    <button class="btn-add" onclick="addToCart('Fresh Brewed Coffee', 40)">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="coffee" data-name="Flat White" data-price="45">
+            <div class="product-image-wrapper">
+                <img src="img/flat-white.jpg" alt="Smooth flat white coffee" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">☕ Coffee</span>
+                <h3>Flat White</h3>
+                <p>Rich espresso with velvety microfoam milk.</p>
+                <div class="product-footer">
+                    <span class="price">R 45.00</span>
+                    <button class="btn-add" onclick="addToCart('Flat White', 45)">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Savory -->
+        <div class="product-card" data-category="savory" data-name="Savory Pie" data-price="75">
+            <div class="product-image-wrapper">
+                <img src="img/savory-pie.jpg" alt="Savory meat pie with golden pastry" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">🥧 Savory</span>
+                <h3>Savory Pie</h3>
+                <p>Flaky pastry filled with seasoned beef and vegetables.</p>
+                <div class="product-footer">
+                    <span class="price">R 75.00</span>
+                    <button class="btn-add" onclick="addToCart('Savory Pie', 75)">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="savory" data-name="Quiche Lorraine" data-price="85">
+            <div class="product-image-wrapper">
+                <img src="img/quiche.jpg" alt="Quiche Lorraine with bacon and cheese" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">🥧 Savory</span>
+                <h3>Quiche Lorraine</h3>
+                <p>Classic French quiche with bacon, cheese, and creamy custard.</p>
+                <div class="product-footer">
+                    <span class="price">R 85.00</span>
+                    <button class="btn-add" onclick="addToCart('Quiche Lorraine', 85)">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Catering -->
+        <div class="product-card" data-category="catering" data-name="Catering Box" data-price="450">
+            <div class="product-image-wrapper">
+                <img src="img/croissant.jpg" alt="Catering box with mixed pastries" onclick="openProductLightbox(this)">
+                <div class="product-overlay">
+                    <span class="overlay-icon">🔍</span>
+                    <span class="overlay-text">View Product</span>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">📦 Catering</span>
+                <h3>Catering Box (6-8 people)</h3>
+                <p>Mixed pastries, bread, and spreads. Perfect for meetings.</p>
+                <div class="product-footer">
+                    <span class="price">R 450.00</span>
+                    <button class="btn-add" onclick="addToCart('Catering Box', 450)">+ Add</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         NO RESULTS MESSAGE
+         ============================================ -->
+    <div id="noProductResults" class="no-results" style="display:none;">
+        <p>🔍 No products found. Try a different search!</p>
+    </div>
+
+    <!-- ============================================
+         ALLERGY NOTE
+         ============================================ -->
+    <section class="allergy-note">
+        <div class="allergy-content">
+            <span class="allergy-icon">⚠️</span>
+            <p><strong>Allergy Information:</strong> Our bakery handles wheat, dairy, eggs, and nuts. Please <a href="contact.html">contact us</a> if you have severe allergies.</p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CART NOTIFICATION
+         ============================================ -->
+    <div id="cartNotification" class="cart-notification">
+        <span id="cartMessage">✅ Added to order!</span>
+        <button onclick="closeCartNotification()">✕</button>
+    </div>
+
+    <!-- ============================================
+         LIGHTBOX
+         ============================================ -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-btn" onclick="event.stopPropagation(); closeLightbox()">×</span>
+        <div class="lightbox-nav">
+            <button class="lightbox-prev" onclick="event.stopPropagation(); navigateLightbox(-1)">‹</button>
+            <img id="lightbox-img" src="">
+            <button class="lightbox-next" onclick="event.stopPropagation(); navigateLightbox(1)">›</button>
+        </div>
+        <div id="lightbox-caption"></div>
+        <div id="lightbox-counter"></div>
+    </div>
+
+    <!-- ============================================
+         BACK TO TOP
+         ============================================ -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>The Daily Loaf</h3>
+                <p>123 Baker Street, Christchurch</p>
+                <p>(03) 555 1234</p>
+                <p>hello@thedailyloaf.co.nz</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="products.html">Products</a>
+                <a href="enquiry.html">Enquiry</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-hours">
+                <h4>Hours</h4>
+                <p>Mon–Fri: 7am – 5pm</p>
+                <p>Sat: 8am – 4pm</p>
+                <p>Sun: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Daily Loaf. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

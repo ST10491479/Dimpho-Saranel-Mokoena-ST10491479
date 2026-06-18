@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Catering & Special Orders - The Daily Loaf | Enquiry Form</title>
+    <meta name="description" content="Submit your catering, custom cake, or special order enquiry to The Daily Loaf. We'll respond within 24 hours.">
+    <meta name="keywords" content="catering Christchurch, custom cakes, special orders, bakery enquiry, corporate catering">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>The Daily Loaf</h1>
+            <p>Artisan Bakery & Cafe</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" aria-label="Toggle navigation">☰</button>
+    </header>
+
+    <!-- ============================================
+         PAGE HEADER
+         ============================================ -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <span class="tag">Get in Touch</span>
+            <h2>Catering & Special Orders</h2>
+            <p>Fill out the form below and we'll reply within 24 hours</p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CATERING HIGHLIGHTS
+         ============================================ -->
+    <div class="catering-highlights">
+        <div class="highlight-card fade-in">
+            <div class="emoji">🎂</div>
+            <h4>Custom Cakes</h4>
+            <p>Birthday, wedding, or celebration cakes made to order</p>
+        </div>
+        <div class="highlight-card fade-in">
+            <div class="emoji">📦</div>
+            <h4>Corporate Catering</h4>
+            <p>Pastry boxes, sandwich platters & breakfast spreads</p>
+        </div>
+        <div class="highlight-card fade-in">
+            <div class="emoji">🥧</div>
+            <h4>Holiday Pies</h4>
+            <p>Seasonal pies for Thanksgiving, Christmas & Easter</p>
+        </div>
+    </div>
+
+    <!-- ============================================
+         ENQUIRY FORM WITH VALIDATION
+         ============================================ -->
+    <section class="enquiry-form" id="enquiryForm">
+        <div class="form-header">
+            <h3>Submit Your Enquiry</h3>
+            <p>All fields marked with <span class="required">*</span> are required</p>
+        </div>
+
+        <form id="enquiryFormElement" onsubmit="return validateEnquiryForm(event)">
+            <!-- Hidden field for Formspree -->
+            <input type="hidden" name="_subject" value="New Catering Enquiry">
+            <input type="hidden" name="_captcha" value="false">
+
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="e.g., John Smith" required>
+                <div class="error-message" id="nameError">Please enter your full name</div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="e.g., john@example.com" required>
+                <div class="error-message" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g., 021 123 4567">
+                <div class="error-message" id="phoneError">Please enter a valid phone number (e.g., 021 123 4567)</div>
+            </div>
+
+            <!-- Enquiry Type -->
+            <div class="form-group">
+                <label for="orderType">Enquiry Type <span class="required">*</span></label>
+                <select id="orderType" name="orderType" required>
+                    <option value="">-- Select one --</option>
+                    <option value="catering">📦 Corporate Catering</option>
+                    <option value="cake">🎂 Custom Cake (Birthday/Wedding)</option>
+                    <option value="holiday">🥧 Holiday Pie Order</option>
+                    <option value="volunteer">🤝 Volunteer/Sponsorship</option>
+                    <option value="other">📝 Other Enquiry</option>
+                </select>
+                <div class="error-message" id="orderTypeError">Please select an enquiry type</div>
+            </div>
+
+            <!-- Date Needed -->
+            <div class="form-group">
+                <label for="dateNeeded">Date Needed</label>
+                <input type="date" id="dateNeeded" name="dateNeeded">
+                <div class="error-message" id="dateError">Please select a valid date</div>
+            </div>
+
+            <!-- Number of People -->
+            <div class="form-group">
+                <label for="people">Number of People</label>
+                <input type="number" id="people" name="people" placeholder="e.g., 15" min="1" max="500">
+                <div class="error-message" id="peopleError">Please enter a valid number (1-500)</div>
+            </div>
+
+            <!-- Budget Range -->
+            <div class="form-group">
+                <label for="budget">Budget Range</label>
+                <select id="budget" name="budget">
+                    <option value="">-- Select budget range --</option>
+                    <option value="under-500">Under R500</option>
+                    <option value="500-1000">R500 - R1,000</option>
+                    <option value="1000-2000">R1,000 - R2,000</option>
+                    <option value="2000-5000">R2,000 - R5,000</option>
+                    <option value="5000-plus">R5,000+</option>
+                </select>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+                <label for="message">Tell us what you're looking for <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="5" required placeholder="e.g., I need a chocolate birthday cake for 15 people on May 15th..."></textarea>
+                <div class="error-message" id="messageError">Please provide details about your enquiry</div>
+                <div class="char-counter" id="charCounter">0 / 500 characters</div>
+            </div>
+
+            <!-- Consent Checkbox -->
+            <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <span>I consent to The Daily Loaf storing my information for the purpose of this enquiry. <span class="required">*</span></span>
+                </label>
+                <div class="error-message" id="consentError">Please consent to us storing your information</div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn" id="submitBtn">
+                📨 Send Enquiry
+            </button>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state" style="display:none;">
+                <span class="spinner"></span>
+                Sending your enquiry...
+            </div>
+        </form>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message" style="display:none;">
+            <div class="success-icon">✅</div>
+            <h3>Enquiry Sent Successfully!</h3>
+            <p>Thank you for getting in touch with The Daily Loaf. We'll review your enquiry and respond within 24 hours.</p>
+            <button onclick="resetForm()" class="btn-secondary">Send Another Enquiry</button>
+        </div>
+    </section>
+
+    <!-- ============================================
+         INFO BOX - Rush Orders
+         ============================================ -->
+    <section class="info-box">
+        <div class="info-icon">⏰</div>
+        <h3>Need a rush order?</h3>
+        <p>For next-day pickup, please order by 9pm. For custom cakes or large catering (20+ people), please give at least 3 days' notice.</p>
+        <div class="info-actions">
+            <a href="contact.html" class="btn-secondary">Contact Us Directly →</a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FAQ ACCORDION (Part 3 Requirement)
+         ============================================ -->
+    <section class="faq-section">
+        <div class="faq-header">
+            <span class="tag">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about catering and special orders</p>
+        </div>
+
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>How far in advance should I place a catering order?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>For corporate catering and standard orders, we recommend at least 48 hours' notice. For custom cakes and large events (20+ people), please give 3-5 days' notice.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Do you offer delivery?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Yes! We offer delivery within Christchurch for orders over R200. Delivery fees apply based on distance. Please discuss delivery options when you submit your enquiry.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Can I make changes to my order after submitting?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Yes, you can make changes up to 24 hours before your pickup/delivery date. Please <a href="contact.html">contact us</a> directly with your order number.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Do you cater for dietary requirements?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Yes! We offer gluten-free, dairy-free, and vegan options. Please specify any dietary requirements in your enquiry so we can accommodate you.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>What is your cancellation policy?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Cancellations made more than 48 hours before the pickup date receive a full refund. Cancellations within 48 hours may be subject to a 50% cancellation fee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BACK TO TOP
+         ============================================ -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>The Daily Loaf</h3>
+                <p>123 Baker Street, Christchurch</p>
+                <p>(03) 555 1234</p>
+                <p>hello@thedailyloaf.co.nz</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="products.html">Products</a>
+                <a href="enquiry.html">Enquiry</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-hours">
+                <h4>Hours</h4>
+                <p>Mon–Fri: 7am – 5pm</p>
+                <p>Sat: 8am – 4pm</p>
+                <p>Sun: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Daily Loaf. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
